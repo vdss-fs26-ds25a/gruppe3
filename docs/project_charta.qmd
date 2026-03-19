@@ -1,5 +1,6 @@
 # Project Charta test 2
 ## Context and Scope
+test
 Describe the context (domain/business area) and topic of the visualization project. Which topical aspects should be addressed? Which question(s) should the data visualization project answer? What are the expected benefits of the project? Where should the visualization product be published (e.g. website, app, intranet)?
 
 ## Project Objectives and Success Criteria
