@@ -425,11 +425,11 @@ gantt
 
 ## Roles and Contact Details
 
-**[Team Member 1] — Data Engineering and Preprocessing.** Responsible for downloading, filtering, cleaning, joining, and reshaping the data. Also manages reproducibility by maintaining the requirements.txt file and writing clear setup instructions in the README. Contact: [email]
+**[Valentin Schwarz] — Data Engineering and Preprocessing.** Responsible for downloading, filtering, cleaning, joining, and reshaping the data. Also manages reproducibility by maintaining the requirements.txt file and writing clear setup instructions in the README. Contact: [email]
 
-**[Team Member 2] — Visualization and Frontend.** Responsible for implementing all charts using Plotly or Altair, building the scrollytelling features with Scrollama.js, styling the website, and deploying it to GitHub Pages. Contact: [email]
+**[Thiveja Thirukumar] — Visualization and Frontend.** Responsible for implementing all charts using Plotly or Altair, building the scrollytelling features with Scrollama.js, styling the website, and deploying it to GitHub Pages. Contact: [email]
 
-**[Team Member 3] — Analysis and Storytelling.** Responsible for the statistical analysis, developing the story arc, writing the narrative text and annotations, maintaining the documentation (data report, project charter), and preparing the presentation. Contact: [email]
+**[Aisosa Omokaro] — Analysis and Storytelling.** Responsible for the statistical analysis, developing the story arc, writing the narrative text and annotations, maintaining the documentation (data report, project charter), and preparing the presentation. Contact: [aisosashina@gmail.com]
 
 All team members work together across these areas and all contribute to the final presentation.
 
