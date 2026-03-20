@@ -1,81 +1,441 @@
-# Project Charta test 2
+---
+title: "Project Charter"
+subtitle: "Is Gold Really the Safe Haven? — Global Precious Metals Trade and Inflation"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    theme: cosmo
+---
+
 ## Context and Scope
-test
-Describe the context (domain/business area) and topic of the visualization project. Which topical aspects should be addressed? Which question(s) should the data visualization project answer? What are the expected benefits of the project? Where should the visualization product be published (e.g. website, app, intranet)?
+
+### Domain
+
+This visualization project explores the connection between **international commodity trading** and **macroeconomics**. The focus is on the global trade flows of precious metals — gold, silver, and platinum — and how these flows relate to inflation across different countries and economic regions.
+
+### Topic and Background
+
+Gold has been considered a "safe haven" for centuries. When the economy becomes unstable, investors, central banks, and financial media all repeat the same message: gold protects your wealth against inflation and financial crises. This belief became even stronger in 2024–2025, when the gold price broke through $3,000 per ounce for the first time — right after the global inflation wave of 2022–2023 pushed consumer prices to levels not seen in decades.
+
+However, most analyses of gold as a safe haven only look at **price charts** — how much gold costs over time. What is much less studied is the question of how **physical trade flows** of precious metals actually change when inflation rises. When a country faces high inflation, does it really import more gold? Does the mix of traded metals (gold vs. silver vs. platinum) shift during economic stress? And which countries serve as major trading hubs — and does their role grow or shrink during crises?
+
+Switzerland is particularly interesting in this context. Around 70% of the world's refined gold passes through Swiss refineries, which makes Switzerland the biggest gold trading hub in the world — even though it has no gold mines of its own. This connection to Switzerland makes the topic especially relevant for a project developed at the ZHAW in Winterthur.
+
+### Aspects to Be Addressed
+
+The project looks at the following themes:
+
+1. **Global gold trade geography.** Which countries lead in gold imports and exports, and how has this changed over three decades (1988–2016)?
+2. **The inflation–trade connection.** Is there a clear link between a country's inflation rate and how much gold it imports? Do high-inflation countries (like Turkey, Argentina, or Venezuela) import significantly more gold than low-inflation countries (like Switzerland, Japan, or Germany)?
+3. **Comparing precious metals.** How do gold, silver, and platinum differ as traded goods? Does gold's share of total precious metals trade grow during times of high inflation?
+4. **Switzerland's special role.** What position does Switzerland hold in global gold trade, and how does this role change when the global economy is under pressure?
+5. **Types of inflation.** Does gold trade respond more to energy inflation, food inflation, or general consumer price inflation? The World Bank dataset includes six different inflation measures, which allows this kind of detailed analysis.
+
+### Questions the Project Should Answer
+
+1. Where does gold flow during times of high inflation, and do these flows change direction?
+2. Do countries with higher inflation consistently import more gold — both by weight and by value?
+3. Is gold truly "special" among precious metals, or do silver and platinum show similar patterns during inflationary times?
+4. What role does Switzerland play as a gold trading hub, and does this role become stronger during global economic stress?
+5. Which type of inflation (food, energy, or core CPI) has the strongest connection to increased gold trading activity?
+
+### Expected Benefits
+
+**Financial literacy.** The project makes complex economic relationships understandable for non-experts through interactive visualizations — instead of relying on technical financial reports full of jargon.
+
+**Evidence-based discussion.** Instead of repeating the common claim that "gold is safe," this project uses real data from UN trade statistics and World Bank inflation records to test whether the claim actually holds up.
+
+**Academic skills.** The project demonstrates how the data visualization and storytelling techniques from the VDSS module can be applied to a real-world, cross-disciplinary dataset.
+
+### Where the Product Will Be Published
+
+The final product will be an **interactive scrollytelling website** hosted on **GitHub Pages**. It will be built using the Quarto framework with embedded interactive charts, and all code and data processing will be fully reproducible from the project's GitHub repository.
+
 
 ## Project Objectives and Success Criteria
-Describe the objectives **from the client/stakeholder perspective**. For example: "Enable users to understand the distribution of sales across different regions". Try to be as specific as possible, but restrict to the concrete needs formulated by the client/stakeholders. For example: if a dashboard is needed explicitly, then state it here, otherwise leave the form of the visualization product open.
 
-Formulate success criteria (from the client/stakeholder perspective): qualitative objectives and, wherever possible, corresponding quantitative metrics with target values to be achieved within the project. These objectives should directly address the pains and gains identified in the user analysis.
+### Objectives (from the Stakeholder Perspective)
 
-It is also helpful to specify what is explicitly excluded from the project objectives (out of scope).
+The main stakeholders are the **VDSS module instructors at ZHAW**, who assess this project as 70% of the module grade. From their point of view, the objectives are:
+
+**O1.** Enable users to explore and understand how precious metals trade is distributed across countries, commodity types, and time periods. This demonstrates effective use of geographic and categorical visualizations from the course.
+
+**O2.** Enable users to see and assess the relationship between inflation rates and gold trade activity at the country level. This demonstrates the ability to communicate correlations and patterns in complex data.
+
+**O3.** Enable users to compare gold, silver, and platinum as traded commodities and understand how their roles differ during inflationary periods. This demonstrates effective use of comparative visualizations such as grouped charts and small multiples.
+
+**O4.** Deliver a coherent data story with a clear narrative structure — not just a set of charts, but a guided journey through the data with a beginning, rising tension, and a conclusion. This demonstrates mastery of data storytelling, a core skill of the VDSS module.
+
+**O5.** Ensure that all data processing, analysis, and visualizations are fully reproducible from the GitHub repository. This meets the course's explicit requirement for reproducibility using Quarto and GitHub.
+
+### Success Criteria
+
+**Visualization diversity.** Minimum acceptable: at least 4 different chart types. Target: at least 6 types (choropleth map, scatter plot, bar chart, line chart, sankey diagram, treemap).
+
+**Interactivity.** Minimum acceptable: at least 2 interactive elements. Target: at least 4 elements (hover tooltips, country filter, time slider, commodity toggle).
+
+**Dataset size.** Minimum acceptable: at least 500 rows in the combined dataset. Target: at least 5,000 rows.
+
+**Variable balance.** Minimum acceptable: at least 3 categorical and 3 numerical variables. Target: 6 categorical and 4 numerical variables.
+
+**Narrative quality.** Minimum acceptable: at least 3 clearly defined chapters with transitions between them. Target: 5 chapters forming a complete narrative arc with a concluding insight.
+
+**Reproducibility.** Minimum acceptable: code runs from the repository when following setup instructions. Target: everything builds with a single `quarto render` command.
+
+**Presentation.** Minimum acceptable: presentation stays within ± 2 minutes of the 10-minute limit. Target: exactly 10 minutes, well-rehearsed.
+
+### Out of Scope
+
+The following things are **not** part of this project:
+
+- **Price prediction.** We will not build machine learning models to forecast future gold prices.
+- **Investment advice.** The product is an analytical tool, not a recommendation system. There will be no buy/sell signals or portfolio suggestions.
+- **Real-time data.** We use historical data only (1988–2016 for trade, 1970–2025 for inflation). No live data feeds.
+- **Individual investor analysis.** The project looks at country-level trade flows, not personal portfolios or retail investor behavior.
+
 
 ## Stakeholder Analysis
-List the people involved in and affected by the project. Describe their goals and relationships with each other. Visualisation in the form of a stakeholder map can provide a quick overview.
+
+### Stakeholder Overview
+
+**VDSS Module Instructors** — Primary client and assessor. They define the evaluation criteria, provide coaching during the semester, and assign the final grade (70% of the module). The project must be designed to meet their requirements for visualization quality, storytelling, reproducibility, and presentation.
+
+**Project Team** (3 members) — Developers and analysts. Responsible for all deliverables. The team must balance this project with 7 other modules running in parallel during the second semester.
+
+**ZHAW Peers** (fellow students) — Secondary audience. They attend the final presentation and may learn from or refer to the project later. They do not directly influence the grade.
+
+**Financially interested public** — Potential end users after publication. They may visit the website to access neutral, data-driven information about gold as a safe haven. They have no direct involvement in the project.
+
+**Financial advisors and professionals** — Potential end users. They might discover and use the visualizations to support their own client consultations. No direct project involvement.
+
+### Stakeholder Map
+
+The stakeholders can be placed along two dimensions — **influence** (ability to affect the project's outcome) and **interest** (how much they care about the outcome):
+
+- *High influence, high interest:* VDSS Instructors — they set the rules and give the grade.
+- *High influence, medium interest:* Project Team — they do all the work but also have to manage time across many other modules.
+- *Low influence, high interest:* ZHAW Peers — they are curious and attend the presentation, but do not affect the grade.
+- *Low influence, low interest:* The general public and financial professionals — they might benefit from the published product, but play no active role.
+
+### Goals and Relationships
+
+The **instructors** want to see whether the team can (a) select and process suitable data, (b) create effective and appropriate visualizations, (c) combine them into a coherent story, and (d) present the results clearly. Their coaching sessions during the semester give the team a chance to get early feedback.
+
+The **team** wants to learn as much as possible about data visualization and storytelling while achieving the best grade. The main challenge is managing time effectively, since the project runs alongside a full course load. The team works together through GitHub for code and WhatsApp for quick communication.
+
 
 ## User Analysis
-Analyse the target audience of the visualization product and create at least 2 personas with **relevant attributes** such as domain expertise, data literacy, technical environment (devices, screen sizes), frequency of use etc. Amend each persona with the dimensions of the customer profile side in the Value Proposition Canvas @Osterwalder2014:
 
-* **User tasks** (jobs): What tasks are users trying to accomplish? Consider functional jobs (e.g. analysing data, making decisions), social jobs (e.g. reporting to stakeholders, collaborating with colleagues) and emotional jobs (e.g. feeling confident in their decisions).
-* **Pains**: What obstacles, risks or undesired outcomes do users currently face? What makes their current approach frustrating or inefficient?
-* **Gains**: What outcomes and benefits do users expect or desire? What would exceed their expectations?
+### Persona 1: Lena Meier (24) — Finance-Curious Student
+
+**Background.** Lena is a 5th-semester Business Informatics student at ZHAW. She recently opened her first savings account and is thinking about how to invest CHF 5,000. Friends and social media have told her that gold is "the safest investment," but she is not sure whether to believe it.
+
+**Domain expertise.** Beginner. She understands basic economic ideas like inflation and GDP, but she has no formal training in finance. She cannot read complex financial charts without help.
+
+**Data literacy.** Moderate. She can read simple bar charts and line charts without problems, but scatter plots and correlation coefficients confuse her.
+
+**Technical environment.** Mostly uses her phone (iPhone 14, Safari). Sometimes uses a laptop (MacBook Air, Chrome). She expects the website to work well on both devices.
+
+**How often she would use it.** Once or twice. She will explore the website, maybe share a chart on social media, and then move on.
+
+**User Tasks (Jobs):**
+
+- *Functional:* Figure out whether gold is a reasonable investment for someone with limited money. Understand the basic relationship between inflation and gold.
+- *Social:* Be able to talk about gold investing with friends using actual data instead of guesses. Share an interesting visualization on Instagram or WhatsApp.
+- *Emotional:* Feel confident that she understands the topic well enough to make a smart decision. Avoid the stress of investing without understanding what she is doing.
+
+**Pains:**
+
+- Financial articles are too long, too complex, and full of words she does not know.
+- Professional tools like Bloomberg or TradingView are built for experts and feel overwhelming.
+- She cannot tell the difference between a neutral analysis and an advertisement from a gold seller.
+- Charts in news articles are static and do not let her explore the data in ways that matter to her — for example, filtering by her own country or a specific time period.
+
+**Gains:**
+
+- A clear, visual explanation of whether gold really protects against inflation — written for someone without a finance degree.
+- Interactive features that let her explore at her own speed (hovering over countries, sliding through years, comparing metals).
+- A clear conclusion at the end — a "verdict" she can remember and use.
+- Something that would exceed her expectations: a "time machine" where she can enter an amount and see what would have happened if she had invested it in gold years ago.
+
+### Persona 2: Thomas Brunner (52) — Independent Financial Advisor
+
+**Background.** Thomas is an independent wealth advisor based in Zürich. He has over 20 years of experience advising private clients and small foundations on how to build their portfolios. For years, he has recommended putting 5–10% of a portfolio into gold, but he wants to back this up with solid, neutral data — not marketing brochures from gold dealers.
+
+**Domain expertise.** Expert. He has a deep understanding of financial markets, asset classes, inflation, and portfolio theory. He reads NZZ, Finanz und Wirtschaft, and Bloomberg every day.
+
+**Data literacy.** High. He is comfortable with scatter plots, heatmaps, correlation matrices, and complex multi-variable charts. He uses Excel and PowerPoint daily.
+
+**Technical environment.** Desktop-first (Dell laptop, Chrome, two monitors). He uses PowerPoint for client presentations, so he needs charts that look professional when he takes a screenshot and puts them into slides.
+
+**How often he would use it.** From time to time. He would come back to the website before client meetings to look up specific charts or data points.
+
+**User Tasks (Jobs):**
+
+- *Functional:* Find data-backed evidence that gold works as an inflation hedge at the country level. Identify which countries best illustrate this relationship. Pull out specific numbers for client presentations.
+- *Social:* Show clients credible, neutral analysis — not biased marketing material. Prove that his advice is based on data, not just personal opinion.
+- *Emotional:* Feel reassured that the data supports the recommendation he has been making for years. Protect his professional reputation.
+
+**Pains:**
+
+- Marketing materials from gold ETF providers are biased and not credible enough for client presentations.
+- Academic research papers are scientifically solid but impossible for clients to understand — they are full of regression tables and statistical jargon.
+- The visualizations he can find online are either too basic (just a gold price chart) or too complicated (research dashboards with dozens of options).
+- Finding country-level data on actual gold trade flows is surprisingly difficult — most sources only show the global gold price.
+
+**Gains:**
+
+- Well-designed, neutral visualizations that he can confidently show to clients or include in presentations.
+- The ability to filter by country, so he can highlight the markets his clients care about.
+- Clear information about where the data comes from, so he can answer follow-up questions about methodology.
+- Something that would exceed his expectations: a print-friendly version or downloadable summary of the key charts.
 
 
 ## Situation Assessment
-Describe the available resources (data, personnel, material, software/tools, infrastructure, etc.) and time as well as restrictions and constraints. Possible risks that may arise during the project are also identified.
+
+### Data Resources
+
+**Dataset 1: UN Global Commodity Trade Statistics**
+
+- Source: United Nations Statistics Division (available on Kaggle)
+- Link: [kaggle.com/datasets/unitednations/global-commodity-trade-statistics](https://www.kaggle.com/datasets/unitednations/global-commodity-trade-statistics)
+- Total size: approximately 8.2 million rows
+- After filtering to precious metals: approximately 10,000–50,000 rows
+- Time period: 1988–2016
+- Variables: `country_or_area` (categorical), `commodity` (categorical — e.g. "Gold, unwrought", "Silver, unwrought"), `flow` (categorical — Import, Export, Re-Import, Re-Export), `category` (categorical), `trade_usd` (numerical — trade value in US dollars), `weight_kg` (numerical), `quantity` (numerical), `year` (numerical)
+
+**Dataset 2: World Bank Global Inflation Database**
+
+- Source: World Bank Research Group (Ha, Kose, and Ohnsorge, 2023)
+- Link: [worldbank.org/en/research/brief/inflation-database](https://www.worldbank.org/en/research/brief/inflation-database)
+- Size after reshaping: approximately 50,000+ rows (209 countries × 6 inflation types × 55 years)
+- Time period: 1970–2025
+- Variables: `country` (categorical), `country_code` (categorical), `indicator_type` (categorical — Headline CPI, Food CPI, Energy CPI, Core CPI, PPI, GDP Deflator), `economy_type` (categorical — Advanced Economy, Emerging Market, Low-Income Developing), `year` (numerical), `inflation_rate` (numerical)
+
+**Combined dataset** (joined on country and year): The merged dataset will contain **6 categorical variables** (country, commodity, flow direction, commodity category, inflation type, economy classification) and **4 numerical variables** (trade value, weight, year, inflation rate). This comfortably meets the course requirement of at least 6 features with a mix of categorical and numerical types, and thousands of rows far exceed the 100-row minimum.
+
+### Team and Working Hours
+
+The team consists of 3 members, each contributing roughly 4–6 hours per week over a period of about 10 weeks. This gives a total of approximately 120–180 person-hours. All team members have completed the first semester of the ZHAW Data Science program, with coursework in Python programming, databases, and statistics.
+
+### Software and Tools
+
+- **Python** (Pandas, NumPy) — data loading, filtering, cleaning, joining, and reshaping
+- **Plotly and Altair** — creating interactive visualizations
+- **Quarto** — building the website, generating documentation, ensuring reproducibility
+- **Scrollama.js or Observable JS** — adding scroll-triggered animations and transitions
+- **Git and GitHub** — version control, team collaboration, and deployment to GitHub Pages
+- **VS Code and Jupyter Notebooks** — coding and data exploration
+
+### Infrastructure
+
+- A GitHub repository provided by the course organizers through the ZHAW GitHub Organization
+- GitHub Pages for free public hosting of the website
+- Personal laptops for all development work
+
+### Restrictions and Constraints
+
+- **Time.** The project runs in parallel with 7 other second-semester modules. Effective working time per team member is limited to about 4–6 hours per week.
+- **Data coverage.** The UN trade dataset covers 1988–2016. This means the most recent inflation spike (2022–2023) cannot be analyzed using trade data, only through the inflation dataset.
+- **Tool requirements.** The course expects Python and the frameworks introduced during lectures. If other tools are used (such as Tableau or D3.js), this must be justified by explaining what functionality is missing.
+- **Reproducibility.** Every step of data processing must be reproducible by running the code from the GitHub repository.
+- **Language.** The visualization product will be in English to reach an international audience.
+
+### Risks
+
+**The UN dataset is too large for local processing.** Likelihood: medium. Impact: high. How we handle it: We filter the data down to precious metals (HS commodity codes 7106–7112) as the very first step. If the file is still too large, we use chunked reading in Pandas.
+
+**Country names do not match between the two datasets.** Likelihood: high. Impact: medium. How we handle it: We use ISO-3166 country codes as the join key instead of country names. We also build a manual mapping table for edge cases and review it early in the project.
+
+**The scrollytelling implementation turns out to be harder than expected.** Likelihood: medium. Impact: medium. How we handle it: Our fallback plan is a standard Quarto website with static but interactive Plotly charts (no scroll-triggered animations). This still meets all course requirements.
+
+**Time pressure from other modules.** Likelihood: high. Impact: medium. How we handle it: We build a realistic schedule with a buffer week at the end. If time gets tight, we prioritize the core visualizations and cut nice-to-have features.
+
+**Uneven distribution of work within the team.** Likelihood: low. Impact: high. How we handle it: Clear role assignments from the start, weekly stand-up meetings, and transparent commit history on GitHub so that everyone's contributions are visible.
+
+**Reshaping the inflation data causes unexpected issues.** Likelihood: low. Impact: low. How we handle it: The `pd.melt()` function in Pandas is well-documented and straightforward. The team has experience with this operation from the Data Engineering module.
 
 
 ## Visualization Concept
-Translate the project objectives into a concrete visualization concept. This corresponds to the value map side of the Value Proposition Canvas [@Osterwalder2014] – describe how the proposed visualization product addresses the users' tasks, relieves their pains and creates gains. Address the following aspects:
 
-* **Product form**: Composition of the visualization product – dashboard, data story, infographic, exploratory tool, etc.
-* **Visual encodings**: Types of charts and visualizations to be used – e.g. bar chart, line chart, scatter plot, map, etc.
-* **Interactivity**: Static vs. dynamic/interactive elements – filtering, drill-down, tooltips, linked views, etc.
-* **Narrative and annotation**: Text elements, storytelling structure, annotations and contextual information.
-* **Target medium and integration**: Embedding in the target environment – e.g. website, intranet, app, print, etc.
+### Product Form
 
-For each design decision, articulate the intended value along three dimensions:
+The visualization product will be an **interactive scrollytelling website**. This means a long-form data story where the user scrolls down through a narrative, and visualizations appear, animate, and change in response to the scroll position. The format is inspired by data journalism from outlets like Reuters Graphics, the New York Times, and NZZ Visuals.
 
-* **Cognitive and analytical value**: How does the design amplify the user's ability to detect patterns, identify outliers, understand distributions or discover relationships [@card1999; @vanwijk2005]?
-* **Communicative value**: How does the design support the communication of information to the target audience profile(s)? 
-* **Experiential and aesthetic value**: How do the visual and interactive qualities of the design foster engagement, trust and willingness to adopt the product in practice?
+We chose scrollytelling over a traditional dashboard for three reasons:
 
-Justify the concept by mapping it explicitly to the project objectives and the user needs identified in the user analysis.
+- It **guides the user through a story** rather than presenting all information at once, which can be overwhelming.
+- It supports **progressive disclosure** — each chapter reveals one insight at a time, so the user is never lost.
+- It creates an **emotional arc** (curiosity → discovery → surprise → resolution) that a dashboard format cannot achieve.
+
+This choice maps directly to **Objective O4** (deliver a cohesive data story). Objectives **O1–O3** are addressed through the specific visualizations embedded within the chapters.
+
+### Story Arc and Chapters
+
+**Introduction — "Is Gold Really the Safe Haven?"**
+The opening section hooks the reader with animated key metrics: the record gold price, the peak of global inflation, and total precious metals trade volume. The goal is to make the reader curious enough to keep scrolling.
+
+**Chapter 1 — "Where Does Gold Flow?"**
+A choropleth world map shows gold trade volume by country. This reveals the geographic concentration of gold trade — users will immediately see that a small number of countries (Switzerland, UK, UAE, China, India) dominate global gold flows.
+
+**Chapter 2 — "When Inflation Strikes"**
+A scatter plot shows the relationship between inflation rates and gold import volumes, with each point representing a country-year observation. Points are colored by economy type (advanced vs. emerging vs. low-income). This chapter directly tests the central hypothesis of the project.
+
+**Chapter 3 — "Gold vs. Silver vs. Platinum"**
+A grouped bar chart compares trade volumes for gold, silver, and platinum over time. This lets users see whether gold truly behaves differently from other precious metals during inflationary periods — or whether all metals follow similar patterns.
+
+**Chapter 4 — "The Swiss Connection"**
+A sankey (flow) diagram shows gold imports flowing into Switzerland and refined gold exports flowing out — broken down by partner country. This chapter highlights Switzerland's unique role as a gold refining hub and adds a local angle that is relevant for the ZHAW context.
+
+**Chapter 5 — "The Verdict"**
+Summary metric cards present the 3–4 most important findings in large, easy-to-read numbers. A short narrative conclusion answers the project's central question based on the evidence presented in the previous chapters.
+
+### Visual Encodings and Their Value
+
+**1. Choropleth World Map (Chapter 1)**
+
+- How it works: Country shapes are filled with a color scale (light to dark gold) based on trade volume in USD.
+- Cognitive and analytical value: Users can instantly spot geographic patterns and outliers — for example, that Switzerland handles enormous gold volumes despite its small size. This pattern would be invisible in a data table.
+- Communicative value: Maps are understood by everyone, regardless of expertise level. Both Persona 1 (student) and Persona 2 (advisor) can immediately read the key message.
+- Experiential and aesthetic value: A well-designed world map is visually striking and makes a strong first impression. The gold-toned color palette ties the visual design to the subject matter.
+
+**2. Scatter Plot with Trend Line (Chapter 2)**
+
+- How it works: Each dot is one country in one year. The x-axis shows the inflation rate, the y-axis shows gold import volume (on a logarithmic scale to handle extreme values). Dot color indicates the economy type. An optional trend line shows the overall direction.
+- Cognitive and analytical value: This chart directly tests the project's central question — is there a visible correlation between inflation and gold imports? The log scale prevents a few very large economies from dominating the picture. Coloring by economy type reveals whether the relationship is different for advanced vs. emerging economies.
+- Communicative value: Persona 2 (the financial advisor) can hover over individual countries to extract specific data points for his presentations. The trend line gives both personas an at-a-glance answer to the core question.
+- Experiential and aesthetic value: Interactivity (hover, click) turns a static academic chart into something users can explore. Persona 1 (the student) can search for her own country and see how it compares to others.
+
+**3. Grouped Bar Chart (Chapter 3)**
+
+- How it works: The x-axis shows years or year ranges. The y-axis shows trade volume. Bars are grouped by metal type (gold, silver, platinum), each with a distinct color.
+- Cognitive and analytical value: Allows direct, side-by-side comparison of the three metals over time. Users can spot whether gold's share increases during specific periods while silver and platinum stay flat — this would support the "flight to gold" hypothesis.
+- Communicative value: Bar charts are the most widely understood chart type. Even users with limited data literacy (Persona 1) can compare bar heights without any training.
+- Experiential and aesthetic value: A toggle button that switches between absolute values and percentage shares lets users choose the perspective that makes most sense to them — percentages for the novice, absolute values for the expert.
+
+**4. Sankey / Flow Diagram (Chapter 4)**
+
+- How it works: Nodes on the left represent countries that export gold to Switzerland. The center node is Switzerland. Nodes on the right represent countries that receive refined gold from Switzerland. The width of each flow represents the trade volume.
+- Cognitive and analytical value: This chart shows the structure of Switzerland's gold trade network. Users can see which countries supply raw gold (mining nations like South Africa and Australia) and which receive refined gold (demand centers like India and China). Asymmetries in the flow widths reveal trade imbalances.
+- Communicative value: The Sankey diagram makes the abstract idea of "Switzerland as gold hub" tangible and easy to grasp. The Swiss angle creates a local connection that is meaningful for a ZHAW audience.
+- Experiential and aesthetic value: Sankey diagrams are visually distinctive and rarely seen in everyday data analysis. Their novelty makes the visualization more memorable. The flowing visual metaphor — "gold flows through Switzerland" — reinforces the narrative.
+
+**5. Line Chart with Annotations (Chapter 2, supporting)**
+
+- How it works: The x-axis is time (years), the y-axis shows either global gold trade volume or a global inflation index. Key events — oil crises, financial crashes, COVID-19 — are marked with annotations directly on the chart.
+- Cognitive and analytical value: Helps users connect data patterns to real-world events. Without the annotations, a spike in 2008 is just a spike. With the label "Global Financial Crisis," it becomes meaningful.
+- Communicative value: The combination of data and context makes the chart self-explanatory. Users do not need any background knowledge to understand what happened and when.
+- Experiential and aesthetic value: Annotated charts feel like professional journalism — like something from Reuters or the NZZ. This editorial quality builds trust in the product.
+
+**6. Summary Metric Cards (Chapter 5)**
+
+- How it works: Large numbers displayed prominently, each with a short label and optional trend indicator.
+- Cognitive and analytical value: Reduces a complex multi-dimensional analysis to 3–4 key numbers that are easy to remember.
+- Communicative value: Gives users a clear, quotable takeaway they can reference later. This directly addresses Persona 1's need for a "verdict."
+- Experiential and aesthetic value: Clean, bold typography with gold accent colors creates a professional, trustworthy conclusion to the story.
+
+### Interactivity
+
+**Hover tooltips.** When the user moves the mouse over a data point, exact values appear (country name, year, trade volume, inflation rate). This serves Persona 2, who needs precise numbers for presentations.
+
+**Country filter.** A dropdown menu or search field lets users highlight or isolate specific countries in any chart. Both personas want to find their own country or a country they care about.
+
+**Time slider.** A range slider lets users restrict all visualizations to a specific time period. This makes it possible to compare how gold trade looked before, during, and after a crisis.
+
+**Commodity toggle.** A button group lets users switch between viewing gold only, silver only, platinum only, or all metals together. This supports the precious metals comparison in Objective O3.
+
+**Scroll-triggered animations.** As the user scrolls to a new chapter, the corresponding visualization appears with an animation — bars grow from zero, map colors fade in, numbers count up. This creates a sense of progression and keeps the user engaged.
+
+### Narrative and Annotation Structure
+
+Every chapter follows the same pattern:
+
+1. **Chapter heading** — a provocative question or bold statement that creates curiosity.
+2. **Context paragraph** — two or three sentences explaining what the user is about to see and why it matters.
+3. **Visualization** — the interactive chart, which appears or animates as the user scrolls into view.
+4. **Insight box** — a highlighted panel summarizing the key finding from the visualization in one or two sentences.
+5. **Transition sentence** — a bridge leading to the next chapter.
+
+This structure works for both types of users. Skimmers (like Persona 1) can follow the story just by reading the headings and insight boxes. Deep explorers (like Persona 2) can spend time interacting with the charts and extracting detailed information.
+
+### Target Medium and Integration
+
+- **Primary medium:** A responsive website deployed on GitHub Pages, designed mainly for desktop screens (1280px and wider), with a usable mobile fallback.
+- **Technology:** Quarto website framework with embedded Plotly charts and Scrollama.js for scroll-triggered animations.
+- **Integration:** The website will be linked from the GitHub repository's README file and submitted through the Moodle assignment page.
 
 
 ## Project Plan
-Divide the project into individual phases, describe them briefly and draw up a preliminary timetable, e.g. as a Gantt chart:
 
 ```{mermaid}
 %%| label: fig-project-plan
-%%| fig-cap: Preliminary project plan in the form of a Gantt chart.
+%%| fig-cap: Preliminary project plan.
 gantt
     title Project Plan
     dateFormat YYYY-MM-DD
-    tickInterval 5day
+    tickInterval 7day
     section Project Understanding
-        Initiation workshop and context analysis     :a1, 2024-07-01, 1d
-        Stakeholder and user analysis     :a3, 2024-07-02, 5d
-        Situation assessment    :a4, 2024-07-06, 1d
-        Project objectives and visualization concept    :a5, 2024-07-07, 1d
-        Sign project charta: milestone, m1, 2024-07-08, 1d
-    
+        Context analysis and topic selection          :a1, 2026-03-10, 7d
+        Stakeholder and user analysis                 :a2, 2026-03-14, 4d
+        Situation assessment                          :a3, 2026-03-17, 2d
+        Objectives and visualization concept          :a4, 2026-03-18, 2d
+        Submit charter draft: milestone, m1, 2026-03-20, 0d
     section Data Acquisition and Exploration
-        Acquire data :a6, 2024-07-08, 3d
-        Exploratory data analysis   :a7, 2024-07-09, 2d
-        Discuss data report: milestone, m2, 2024-07-11, 1d
-        
+        Download and filter UN trade dataset           :a5, 2026-03-24, 5d
+        Download and reshape World Bank inflation data :a6, 2026-03-24, 3d
+        Join datasets and clean combined data          :a7, 2026-03-28, 4d
+        Exploratory data analysis and first charts     :a8, 2026-04-01, 7d
+        Complete data report: milestone, m2, 2026-04-11, 0d
     section Visual Encoding and Design
-        Overview charts   :a8, 2024-07-11, 3d
-        Maps :a9, 2024-07-11, 5d
-        Implement Dashboard prototype :a10, 2024-07-16, 5d
-        Complete visualization report :a10, 2024-07-21, 1d
-    section Evaluation
-        Prepare presentation :a10, 2024-07-22, 2d
-        Project presentation : milestone, m2, 2024-07-24, 4m
+        Choropleth world map                           :a9, 2026-04-14, 7d
+        Scatter plot inflation vs gold                 :a10, 2026-04-14, 5d
+        Bar charts precious metals comparison          :a11, 2026-04-21, 5d
+        Sankey diagram Switzerland                     :a12, 2026-04-21, 7d
+        Summary cards and verdict                      :a13, 2026-04-28, 3d
+    section Scrollytelling Integration
+        Website structure and scroll triggers           :a14, 2026-05-01, 7d
+        Narrative text and annotations                  :a15, 2026-05-05, 5d
+        Responsive design and testing                   :a16, 2026-05-08, 4d
+    section Documentation and Finalization
+        Code documentation and README                   :a17, 2026-05-12, 5d
+        Coaching session and feedback                   :a18, 2026-05-19, 5d
+        Final review and buffer                         :a19, 2026-05-26, 5d
+        Submit deliverables: milestone, m3, 2026-06-01, 0d
+    section Presentation
+        Prepare slides                                  :a20, 2026-06-01, 7d
+        Rehearse presentation                           :a21, 2026-06-05, 5d
+        Present: milestone, m4, 2026-06-15, 0d
 ```
 
-See [Mermaid syntax for Gantt charts](https://mermaid.js.org/syntax/gantt.html). It might not be displayed correctly in Safari &#8594; use Chrome. [Live editor with export functionality](https://mermaid.live/)
+### Phase Descriptions
+
+**Phase 1 — Project Understanding (KW 11–12).** Define the scope, analyze stakeholders and users, write the project objectives and visualization concept, and submit the project charter draft by March 20.
+
+**Phase 2 — Data Acquisition and Exploration (KW 13–15).** Download both datasets. Filter the UN trade data to precious metals using HS commodity codes 7106–7112. Reshape the World Bank inflation data from wide to long format using `pd.melt()`. Join the two datasets on country and year. Run exploratory data analysis and create initial charts. Complete the data report by April 11.
+
+**Phase 3 — Visual Encoding and Design (KW 16–18).** Build all five core visualizations (choropleth map, scatter plot, grouped bar chart, sankey diagram, summary cards) using Plotly or Altair. Review and improve the designs within the team.
+
+**Phase 4 — Scrollytelling Integration (KW 19–20).** Put the visualizations together into the scrollytelling website. Add scroll-triggered animations, narrative text, annotations, and chapter transitions. Test on different screen sizes and browsers.
+
+**Phase 5 — Documentation and Finalization (KW 21–22).** Write the code documentation, data report, and README with setup instructions. Use the coaching session to get feedback and make improvements. Do a final review and fix any remaining issues.
+
+**Phase 6 — Presentation (KW 23–24).** Prepare the presentation slides. Rehearse the 10-minute presentation at least three times. Deliver the presentation during the exam period.
+
 
 ## Roles and Contact Details
-List the people involved in the development work here with their role titles, tasks and contact details.
+
+**[Valentin Schwarz] — Data Engineering and Preprocessing.** Responsible for downloading, filtering, cleaning, joining, and reshaping the data. Also manages reproducibility by maintaining the requirements.txt file and writing clear setup instructions in the README. Contact: [email]
+
+**[Thiveja Thirukumar] — Visualization and Frontend.** Responsible for implementing all charts using Plotly or Altair, building the scrollytelling features with Scrollama.js, styling the website, and deploying it to GitHub Pages. Contact: [email]
+
+**[Aisosa Omokaro] — Analysis and Storytelling.** Responsible for the statistical analysis, developing the story arc, writing the narrative text and annotations, maintaining the documentation (data report, project charter), and preparing the presentation. Contact: [aisosashina@gmail.com]
+
+All team members work together across these areas and all contribute to the final presentation.
+
+### How We Collaborate
+
+- **Weekly stand-ups** on Tuesdays, 15 minutes, online via Teams
+- **Version control** through Git and GitHub, using feature branches and pull requests
+- **Task tracking** with GitHub Issues, labeled by type (`data`, `viz`, `story`, `docs`)
+- **Quick communication** through a shared WhatsApp group
