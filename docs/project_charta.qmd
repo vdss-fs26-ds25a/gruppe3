@@ -20,7 +20,7 @@ Gold has been considered a "safe haven" for centuries. When the economy becomes 
 
 However, most analyses of gold as a safe haven only look at **price charts** — how much gold costs over time. What is much less studied is the question of how **physical trade flows** of precious metals actually change when inflation rises. When a country faces high inflation, does it really import more gold? Does the mix of traded metals (gold vs. silver vs. platinum) shift during economic stress? And which countries serve as major trading hubs — and does their role grow or shrink during crises?
 
-Switzerland is particularly interesting in this context. Around 70% of the world's refined gold passes through Swiss refineries, which makes Switzerland the biggest gold trading hub in the world — even though it has no gold mines of its own. This connection to Switzerland makes the topic especially relevant for a project developed at the ZHAW in Winterthur.
+Switzerland is particularly interesting in this context. Around 70% of the world's refined gold passes through Swiss refineries, which makes Switzerland the biggest gold trading hub in the world — even though it has no gold mines of its own. 
 
 ### Aspects to Be Addressed
 
@@ -113,9 +113,9 @@ The following things are **not** part of this project:
 
 The stakeholders can be placed along two dimensions — **influence** (ability to affect the project's outcome) and **interest** (how much they care about the outcome):
 
-- *High influence, high interest:* VDSS Instructors — they set the rules and give the grade.
-- *High influence, medium interest:* Project Team — they do all the work but also have to manage time across many other modules.
-- *Low influence, high interest:* ZHAW Peers — they are curious and attend the presentation, but do not affect the grade.
+- *medium influence, medium interest:* VDSS Instructors — they set the rules and give the grade.
+- *high influence, high interest:* Project Team — they do all the work but also have to manage time across many other modules.
+- *Low influence, medium interest:* ZHAW Peers — they are curious and attend the presentation, but do not affect the grade.
 - *Low influence, low interest:* The general public and financial professionals — they might benefit from the published product, but play no active role.
 
 ### Goals and Relationships
@@ -129,7 +129,7 @@ The **team** wants to learn as much as possible about data visualization and sto
 
 ### Persona 1: Lena Meier (24) — Finance-Curious Student
 
-**Background.** Lena is a 5th-semester Business Informatics student at ZHAW. She recently opened her first savings account and is thinking about how to invest CHF 5,000. Friends and social media have told her that gold is "the safest investment," but she is not sure whether to believe it.
+**Background.** Lena is a 3rd-semester Business Informatics student at ZHAW. She is thinking about how to invest CHF 5,000. Friends and social media have told her that gold is "the safest investment," but she is not sure whether to believe it.
 
 **Domain expertise.** Beginner. She understands basic economic ideas like inflation and GDP, but she has no formal training in finance. She cannot read complex financial charts without help.
 
@@ -222,9 +222,7 @@ The team consists of 3 members, each contributing roughly 4–6 hours per week o
 ### Software and Tools
 
 - **Python** (Pandas, NumPy) — data loading, filtering, cleaning, joining, and reshaping
-- **Plotly and Altair** — creating interactive visualizations
 - **Quarto** — building the website, generating documentation, ensuring reproducibility
-- **Scrollama.js or Observable JS** — adding scroll-triggered animations and transitions
 - **Git and GitHub** — version control, team collaboration, and deployment to GitHub Pages
 - **VS Code and Jupyter Notebooks** — coding and data exploration
 
@@ -425,9 +423,9 @@ gantt
 
 ## Roles and Contact Details
 
-**[Valentin Schwarz] — Data Engineering and Preprocessing.** Responsible for downloading, filtering, cleaning, joining, and reshaping the data. Also manages reproducibility by maintaining the requirements.txt file and writing clear setup instructions in the README. Contact: [email]
+**[Valentin Schwarz] — Data Engineering and Preprocessing.** Responsible for downloading, filtering, cleaning, joining, and reshaping the data. Also manages reproducibility by maintaining the requirements.txt file and writing clear setup instructions in the README. Contact: [vschwarz@ik.me]
 
-**[Thiveja Thirukumar] — Visualization and Frontend.** Responsible for implementing all charts using Plotly or Altair, building the scrollytelling features with Scrollama.js, styling the website, and deploying it to GitHub Pages. Contact: [email]
+**[Thiveja Thirukumar] — Visualization and Frontend.** Responsible for implementing all charts using Plotly or Altair, building the scrollytelling features with Scrollama.js, styling the website, and deploying it to GitHub Pages. Contact: [thiveja.thirukumar@gmail.coml
 
 **[Aisosa Omokaro] — Analysis and Storytelling.** Responsible for the statistical analysis, developing the story arc, writing the narrative text and annotations, maintaining the documentation (data report, project charter), and preparing the presentation. Contact: [aisosashina@gmail.com]
 
@@ -435,7 +433,7 @@ All team members work together across these areas and all contribute to the fina
 
 ### How We Collaborate
 
-- **Weekly stand-ups** on Tuesdays, 15 minutes, online via Teams
+- **Weekly stand-ups** on Tuesdays, we plan a weekly meeting to discuss progress
 - **Version control** through Git and GitHub, using feature branches and pull requests
 - **Task tracking** with GitHub Issues, labeled by type (`data`, `viz`, `story`, `docs`)
 - **Quick communication** through a shared WhatsApp group
