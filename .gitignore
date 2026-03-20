@@ -4,6 +4,22 @@
 # Quarto in docs
 docs/.quarto/
 
+# Claude Code
+.claude/
+
+# VS Code
+.vscode/
+
+# Quarto generated output
+README.html
+README_files/
+
+# Data files
+data/*.csv
+data/*.xlsx
+data_acquisition/raw/
+data_acquisition/processed/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
