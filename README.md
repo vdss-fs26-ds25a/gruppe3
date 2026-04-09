@@ -16,12 +16,9 @@
 </p>
 </h4>
 
----
-
 **Live app:** https://gold-flows.streamlit.app/
 **Documentation:** https://vdss-fs26-ds25a.github.io/gruppe3/
 
----
 
 ## What This Project Does
 
@@ -35,7 +32,6 @@ When inflation rises, the advice is always the same: *buy gold*. But what actual
 
 The final product is a 5-chapter Streamlit scrollytelling app with interactive charts (choropleth map, scatter plot, grouped bar chart, Sankey diagram, and summary metric cards).
 
----
 
 ## Data Sources
 
@@ -44,7 +40,6 @@ The final product is a 5-chapter Streamlit scrollytelling app with interactive c
 | UN Global Commodity Trade Statistics | Kaggle (filtered to HS codes 7106–7112) | 1988–2016, ~10,000–50,000 rows after filtering |
 | World Bank Global Inflation Database | Ha, Kose & Ohnsorge (2023) | 1970–2025, 209 countries × 6 inflation types |
 
----
 
 ## Project Structure
 
@@ -65,7 +60,6 @@ gruppe3/
     └── deployment.qmd
 ```
 
----
 
 ## Setup
 
@@ -88,7 +82,6 @@ uv add <package>
 uv remove <package>
 ```
 
----
 
 ## Documentation (Quarto)
 
@@ -103,7 +96,6 @@ The documentation is deployed to GitHub Pages via GitHub Actions on every push t
 
 **Initial setup (once):** Go to **Settings > Pages** in the GitHub repo and set the source to **GitHub Actions**.
 
----
 
 ## Team
 
@@ -113,7 +105,6 @@ The documentation is deployed to GitHub Pages via GitHub Actions on every push t
 | Aisosa Omokaro | App Infrastructure — inflation data, Streamlit deployment | aisosashina@gmail.com |
 | Thiveja Thirukumar | Documentation — research, data report, project charter | thiveja.thirukumar@gmail.com |
 
----
 
 ## License
 
