@@ -1,138 +1,116 @@
-# Sample Project Hallo Aiso
-This is a template for a data visualization project using Python, uv for environment and package management and Quarto for documentation.
+<h1>
+<p align="center">
+  <br> Is Gold Really the Safe Haven?
+</p>
+</h1>
 
-To adapt to your individual project change `sample` to the respective project name in the commands below
+<h4>
+<p align="center"
+<br> Global Precious Metals Trade and Inflation — An Interactive Data Story
+</p>
+</h4>
 
-Adapt the `LICENSE` as required.
+An interactive scrollytelling website exploring whether gold truly functions as an inflation hedge by analyzing physical trade flows of gold, silver, and platinum against country-level inflation data.
 
-> To do: Provide a brief description of the project here.
+---
 
-## Project Organisation
-The visualization product development is organised according to the following process model:
+**Live app:** https://gold-flows.streamlit.app/
+**Documentation:** https://vdss-fs26-ds25a.github.io/gruppe3/
 
-![The visualization product development process](docs/pics/vizproductprocess.png)
+---
 
-Code and configurations used in the different project phases are stored in the correspoding subfolders. Documentation artefacts in the form of a Quarto project are provided in `docs`.
+## What This Project Does
 
-| Phase | Code folders | Documentation section | `docs`-File |
-|:-------|:---|:---|:---|
-| Project Understanding | -  | Project Charta | project_charta.qmd  |
-| Data Acquisition and Exploration | `eda` | Data Report | data_report.qmd  |
-| Visual Encoding and Design | `encoding-design`  | Visual Encoding and Design | viz_encoding_design.qmd  |
-| Evaluation | `evaluation`  | Evaluation | evaluation.qmd  |
-| Deployment | `deployment` | Deployment | deplyoment.qmd |
+When inflation rises, the advice is always the same: *buy gold*. But what actually happens to physical gold trade flows when inflation spikes? This project investigates:
 
+1. Where does gold flow during high-inflation periods — and do those flows change direction?
+2. Do high-inflation countries consistently import more gold?
+3. Is gold special, or do silver and platinum show the same patterns?
+4. What role does Switzerland play as a refining hub during global economic stress?
+5. Which type of inflation — food, energy, or core CPI — has the strongest link to gold trade activity?
 
-> To do: Adjust accoding to your specific project needs - ensure consistency with readme, documentation, etc.
+The final product is a 5-chapter Streamlit scrollytelling app with interactive charts (choropleth map, scatter plot, grouped bar chart, Sankey diagram, and summary metric cards).
 
-> To do: add link to documentation website for convenience.
+---
 
+## Data Sources
 
-See section `Quarto Setup and Usage` for instructions on how to build and serve the documentation website using Quarto.
+| Dataset | Source | Coverage |
+|---|---|---|
+| UN Global Commodity Trade Statistics | Kaggle (filtered to HS codes 7106–7112) | 1988–2016, ~10,000–50,000 rows after filtering |
+| World Bank Global Inflation Database | Ha, Kose & Ohnsorge (2023) | 1970–2025, 209 countries × 6 inflation types |
 
-## Python Environment Setup and Management with uv
-Make sure to have uv installed: https://docs.astral.sh/uv/getting-started/installation/
+---
 
-After cloning the repository,  create the python environment with all dependencies based on the `.python-version`, `pyproject.toml` and `uv.lock` files by running
-```bash
-uv sync
+## Project Structure
+
+```
+gruppe3/
+├── data/              # Raw and processed datasets
+│   ├── raw/
+│   └── processed/
+├── eda/               # Exploratory data analysis scripts
+├── deployment/        # Streamlit app (app.py)
+├── evaluation/        # Evaluation artefacts
+├── viz_design/        # Visual encoding and design explorations
+└── docs/              # Quarto documentation website
+    ├── project_charta.qmd
+    ├── data_report.qmd
+    ├── viz_design_report.qmd
+    ├── evaluation.qmd
+    └── deployment.qmd
 ```
 
-To add new dependencies, use
+---
+
+## Setup
+
+**Requirements:** [uv](https://docs.astral.sh/uv/getting-started/installation/), [Quarto](https://quarto.org/docs/get-started/)
+
+```bash
+# Clone the repo and install dependencies
+uv sync
+
+# Run the Streamlit app
+uv run streamlit run deployment/app.py
+
+# Preview the documentation website
+cd docs && uv run quarto preview
+```
+
+To add or remove packages:
 ```bash
 uv add <package>
-```
-which will add the package to `pyproject.toml` and update the `uv.lock` file. You can also specify a version, e.g. `uv add pandas==2.0.3`.
-
-Remove packages with
-```bash
 uv remove <package>
 ```
 
-Commit changes to `pyproject.toml` and `uv.lock` files into version control.
+---
 
-Run `uv sync` after pulling changes to update the local environment.
+## Documentation (Quarto)
 
-Whenever the python environment is used, make sure to prefix every command that uses python with `uv run`, e.g.
+Source files are in `docs/`. To build and deploy:
+
 ```bash
-uv run python script.py
+cd docs
+uv run quarto render    # builds to docs/build/, updates docs/_freeze
 ```
 
-You can also run
-```bash 
-source .venv/bin/activate
-```
-to activate the project Python environment in a terminal session in order to avoid having to prefix every command.
+The documentation is deployed to GitHub Pages via GitHub Actions on every push to `main`. Python computations are cached in `docs/_freeze` (checked in), so the Actions runner does not need Python.
 
-## Runtime Configuration with Environment Variables
-The environment variables are specified in a .env-File, which is never commited into version control, as it may contain secrets. The repo just contains the file `.env.template` to demonstrate how environment variables are specified.
+**Initial setup (once):** Go to **Settings > Pages** in the GitHub repo and set the source to **GitHub Actions**.
 
-You have to create a local copy of `.env.template` in the project root folder and the easiest is to just rename it to `.env`.
+---
 
-The content of the .env-file is then read by the pypi-dependency: `python-dotenv`. Usage:
-```python
-import os
-from dotenv import load_dotenv
-```
+## Team
 
-`load_dotenv` reads the .env-file and sets the environment variables:
+| Name | Role | Contact |
+|---|---|---|
+| Valentin Schwarz | Data Engineering — pipeline, repo structure | vschwarz@ik.me |
+| Aisosa Omokaro | App Infrastructure — inflation data, Streamlit deployment | aisosashina@gmail.com |
+| Thiveja Thirukumar | Documentation — research, data report, project charter | thiveja.thirukumar@gmail.com |
 
-```python
-load_dotenv()
-```
+---
 
-which can then be accessed (assuming the file contains a line `SAMPLE_VAR=<some value>`):
+## License
 
-```python
-os.environ['SAMPLE_VAR']
-```
-
-## Quarto Setup and Usage
-
-### Setup Quarto
-
-1. [Install Quarto](https://quarto.org/docs/get-started/)
-2. Optional: [quarto-extension for VS Code](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)
-3. If working with svg files and pdf output you will need to install rsvg-convert:
-    * On macOS: `brew install librsvg`
-    * On Windows using chocolatey:
-      * [Install chocolatey](https://chocolatey.org/install#individual)
-      * [Install rsvg-convert](https://community.chocolatey.org/packages/rsvg-convert): `choco install rsvg-convert`
-
-Source `*.qmd` and configuration files are in the `docs` folder. The Quarto project configuration is in `docs/_quarto.yml`.
-
-With embedded python code chunks that perform computations, you need to make sure that the python environment is activated when rendering. This can be done by prefixing the render command with `uv run`, e.g.:
-```bash
-uv run quarto render
-```
-
-### Working on the Documentation
-
-1. Make changes to the `.qmd` source files in the `docs` folder
-2. Make sure the project Python environment is activated (see Python environment setup and management)
-3. Preview locally: `quarto preview` from the `docs` folder
-4. Build the documentation website: `uv run quarto render` from the `docs` folder. This renders to `docs/build`
-5. Check the website locally by opening `docs/build/index.html` in a browser
-
-### Deployment of the Documentation to GitHub Pages
-
-The documentation website is deployed to GitHub Pages via a GitHub Actions workflow (`.github/workflows/publish.yml`). Every push to `main` triggers the workflow, which renders the Quarto project and deploys the result.
-
-The setting `execute: freeze: auto` in `_quarto.yml` ensures that Python computations are only executed locally. Results are cached in `docs/_freeze` and checked into the repository, so the GitHub Actions runner does not need Python — it uses the pre-computed results.
-
-#### Initial Setup (once)
-
-1. In the GitHub repository settings, go to **Settings > Pages** and set the source to **GitHub Actions**
-2. Render locally so that `_freeze` contains cached computation results:
-   ```bash
-   cd docs && uv run quarto render
-   ```
-3. Push the changes to `main`
-
-The `_freeze` directory and the workflow file `.github/workflows/publish.yml` should already be tracked in the repository.
-
-#### Publishing Updates
-
-1. Build the website locally: `uv run quarto render` from the `docs` folder. This updates `docs/build` (gitignored) and `docs/_freeze` (checked in)
-2. Check the website locally by opening `docs/build/index.html`
-3. Commit and push all updated files (including `docs/_freeze`) to `main`. The GitHub Actions workflow will render and deploy the site automatically
+See [LICENSE](LICENSE).
