@@ -1,8 +1,8 @@
-<h1>
+<h2>
 <p align="center">
   <br> Is Gold Really the Safe Haven?
 </p>
-</h1>
+</h2>
 
 <h3>
 <p align="center"
