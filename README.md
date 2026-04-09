@@ -1,8 +1,8 @@
-<h2>
+<h1>
 <p align="center">
   <br> Is Gold Really the Safe Haven?
 </p>
-</h2>
+</h1>
 
 <h3>
 <p align="center"
@@ -12,12 +12,14 @@
 
 <h4>
 <p align="center"
-<br> An interactive scrollytelling website exploring whether gold truly functions as an inflation hedge by analyzing physical trade flows of gold, silver, and platinum against country-level inflation data.
+<br> An interactive scrollytelling website exploring whether gold truly functions as an inflation hedge by analyzing physical trade flows of gold, silver, and platinum against country-level 1inflation data.
 </p>
 </h4>
 
-[![Live App](https://img.shields.io/badge/Live_App-Streamlit-red?logo=streamlit)](https://gold-flows.streamlit.app/)
-[![Documentation](https://img.shields.io/badge/Documentation-GitHub_Pages-blue?logo=github)](https://vdss-fs26-ds25a.github.io/follow-the-gold/)
+<p align="center">
+  <a href="https://gold-flows.streamlit.app/"><img src="https://img.shields.io/badge/Live_App-Streamlit-red?logo=streamlit" alt="Live App"></a>
+  <a href="https://vdss-fs26-ds25a.github.io/follow-the-gold/"><img src="https://img.shields.io/badge/Documentation-GitHub_Pages-blue?logo=github" alt="Documentation"></a>
+</p>
 
 
 ## What This Project Does
