@@ -9,7 +9,7 @@
 </h1>
 
 
-An interactive scrollytelling website exploring whether gold truly functions as an inflation hedge by analyzing physical trade flows of gold, silver, and platinum against country-level 1inflation data.
+An interactive scrollytelling website exploring whether gold truly functions as an inflation hedge by analyzing physical trade flows of gold, silver, and platinum against country-level inflation data.
 
 When inflation rises, the advice is always the same: **buy gold**. But what actually happens to physical gold trade flows when inflation spikes? This project investigates:
 
