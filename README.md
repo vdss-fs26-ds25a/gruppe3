@@ -4,13 +4,17 @@
 </p>
 </h1>
 
+<h3>
+<p align="center"
+<br> Global Precious Metals Trade and Inflation
+</p>
+</h3>
+
 <h4>
 <p align="center"
-<br> Global Precious Metals Trade and Inflation — An Interactive Data Story
+<br> An interactive scrollytelling website exploring whether gold truly functions as an inflation hedge by analyzing physical trade flows of gold, silver, and platinum against country-level inflation data.
 </p>
 </h4>
-
-An interactive scrollytelling website exploring whether gold truly functions as an inflation hedge by analyzing physical trade flows of gold, silver, and platinum against country-level inflation data.
 
 ---
 
