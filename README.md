@@ -17,7 +17,7 @@
 </h4>
 
 **Live app:** https://gold-flows.streamlit.app/ \
-**Documentation:** https://vdss-fs26-ds25a.github.io/gruppe3/ \
+**Documentation:** https://vdss-fs26-ds25a.github.io/gruppe3/
 
 
 ## What This Project Does
