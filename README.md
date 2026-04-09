@@ -17,7 +17,7 @@
 </h4>
 
 [![Live App](https://img.shields.io/badge/Live_App-Streamlit-red?logo=streamlit)](https://gold-flows.streamlit.app/)
-[![Documentation](https://img.shields.io/badge/Documentation-GitHub_Pages-blue?logo=github)](https://vdss-fs26-ds25a.github.io/gruppe3/)
+[![Documentation](https://img.shields.io/badge/Documentation-GitHub_Pages-blue?logo=github)](https://vdss-fs26-ds25a.github.io/follow-the-gold/)
 
 
 ## What This Project Does
