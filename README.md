@@ -1,36 +1,23 @@
 <h1>
 <p align="center">
-  <br> Is Gold Really the Safe Haven?
-</p>
-</h1>
-
-<h3>
-<p align="center"
-<br> Global Precious Metals Trade and Inflation
-</p>
-</h3>
-
-<h4>
-<p align="center"
-<br> An interactive scrollytelling website exploring whether gold truly functions as an inflation hedge by analyzing physical trade flows of gold, silver, and platinum against country-level 1inflation data.
-</p>
-</h4>
-
-<p align="center">
+  <br> Global Precious Metals Trade and Inflation
+  <p align="center">
   <a href="https://gold-flows.streamlit.app/"><img src="https://img.shields.io/badge/Live_App-Streamlit-red?logo=streamlit" alt="Live App"></a>
   <a href="https://vdss-fs26-ds25a.github.io/follow-the-gold/"><img src="https://img.shields.io/badge/Documentation-GitHub_Pages-blue?logo=github" alt="Documentation"></a>
 </p>
+</p>
+</h1>
 
 
-## What This Project Does
+An interactive scrollytelling website exploring whether gold truly functions as an inflation hedge by analyzing physical trade flows of gold, silver, and platinum against country-level 1inflation data.
 
-When inflation rises, the advice is always the same: *buy gold*. But what actually happens to physical gold trade flows when inflation spikes? This project investigates:
+When inflation rises, the advice is always the same: **buy gold**. But what actually happens to physical gold trade flows when inflation spikes? This project investigates:
 
-1. Where does gold flow during high-inflation periods — and do those flows change direction?
-2. Do high-inflation countries consistently import more gold?
-3. Is gold special, or do silver and platinum show the same patterns?
-4. What role does Switzerland play as a refining hub during global economic stress?
-5. Which type of inflation — food, energy, or core CPI — has the strongest link to gold trade activity?
+- Where does gold flow during high-inflation periods — and do those flows change direction?
+-  Do high-inflation countries consistently import more gold?
+- Is gold special, or do silver and platinum show the same patterns?
+- What role does Switzerland play as a refining hub during global economic stress?
+- Which type of inflation — food, energy, or core CPI — has the strongest link to gold trade activity?
 
 The final product is a 5-chapter Streamlit scrollytelling app with interactive charts (choropleth map, scatter plot, grouped bar chart, Sankey diagram, and summary metric cards).
 
