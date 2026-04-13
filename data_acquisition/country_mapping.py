@@ -6,8 +6,8 @@ CSV_PATH = BASE_DIR / "data" / "processed" / "precious_metals_trade_inflation.cs
 
 with open(CSV_PATH) as f:
     reader = csv.DictReader(f)
-    laender = []
+    laender = set() # Duplikate entfernen
     for row in reader:
-        laender.append(row['country'])
+        laender.add(row['country'])
 
-print(laender[:5]) #check 
+print(len(laender)) #check 
