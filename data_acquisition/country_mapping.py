@@ -13,8 +13,6 @@ with open(CSV_PATH) as f:
     for row in reader:
         laender.add(row['country']) 
 
-print(len(laender)) #check 
-
 gefunden = {}
 nicht_gefunden = []
 
