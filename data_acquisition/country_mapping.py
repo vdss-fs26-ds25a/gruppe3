@@ -69,3 +69,13 @@ for name in laender:
 
 print("O Gefunden:", len(gefunden))
 print("X Nicht gefunden:", nicht_gefunden)
+
+OUTPUT_PATH = BASE_DIR / "data" / "processed" / "country_mapping.csv"
+
+with open(OUTPUT_PATH, "w", newline="") as f:
+    writer = csv.DictWriter(f, fieldnames=["country", "iso_code"])
+    writer.writeheader()
+    for name, code in gefunden.items():
+        writer.writerow({"country": name, "iso_code": code})
+
+print("Gespeichert!")
