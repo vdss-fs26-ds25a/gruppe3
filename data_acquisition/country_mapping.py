@@ -6,17 +6,19 @@ import pycountry
 BASE_DIR = Path(__file__).parent.parent  
 CSV_PATH = BASE_DIR / "data" / "processed" / "precious_metals_trade_inflation.csv"
 
+# Ländernamen aus CSV laden, Duplikate entfernen
 with open(CSV_PATH) as f:
     reader = csv.DictReader(f)
-    laender = set() # Duplikate entfernen
+    laender = set() 
     for row in reader:
-        laender.add(row['country'])
+        laender.add(row['country']) 
 
 print(len(laender)) #check 
 
 gefunden = {}
 nicht_gefunden = []
 
+# Manuelle Korrekturen für nicht-standardisierte Namen
 korrekturen = {
     "Korea, Rep.": "KR",
     "Turkey": "TR",
@@ -53,15 +55,18 @@ korrekturen = {
     "Neth. Antilles": "AN",
 }
 
+# Schritt 1: exakte Suche
 for name in laender:
     ergebnis = pycountry.countries.get(name=name)
     if ergebnis:
         gefunden[name] = ergebnis.alpha_2
     else:
+        # Schritt 2: Fuzzy Search als Backup
         try: 
             ergebnis = pycountry.countries.search_fuzzy(name)
             gefunden[name] = ergebnis[0].alpha_2
         except LookupError:
+            # Schritt 3: manuelle Korrekturen
             if name in korrekturen:
                 gefunden[name] = korrekturen[name]
             else:
@@ -72,6 +77,7 @@ print("X Nicht gefunden:", nicht_gefunden)
 
 OUTPUT_PATH = BASE_DIR / "data" / "processed" / "country_mapping.csv"
 
+# Ergebnis speichern
 with open(OUTPUT_PATH, "w", newline="") as f:
     writer = csv.DictWriter(f, fieldnames=["country", "iso_code"])
     writer.writeheader()
