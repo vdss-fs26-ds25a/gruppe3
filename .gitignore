@@ -15,11 +15,8 @@ README.html
 README_files/
 
 # Data files
-data/*.csv
-data/*.xlsx
-data/commodity_trade_statistics_data.csv
-data_acquisition/raw/
-data_acquisition/processed/
+data/raw/*.xlsx
+data/raw/*.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
