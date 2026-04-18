@@ -144,3 +144,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+data/raw/BACI_HS17_V202601/
